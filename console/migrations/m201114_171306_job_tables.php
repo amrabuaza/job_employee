@@ -14,6 +14,9 @@ class m201114_171306_job_tables extends Migration
     {
         $this->createTable('{{%job}}', [
             'id' => $this->primaryKey(),
+            'title' => $this->string()->notNull(),
+            'description' => $this->string()->notNull(),
+            'period' => $this->string()->notNull(),
             'status' => 'ENUM("pending","done","canceled") DEFAULT "pending"',
             'price' => $this->double()->notNull(),
             'owner_id' => $this->integer()->notNull(),
